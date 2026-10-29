@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Scholarship with Static Site Publishing</title>
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/serif.min.css">
+    <style>
+        .reveal blockquote {
+            background: #f9f9f9;
+            border-left: 5px solid #0056b3;
+            padding: 15px;
+            font-style: italic;
+            text-align: left;
+            width: 90%;
+        }
+        .reveal ul {
+            text-align: left;
+            display: inline-block;
+        }
+        .reveal p, .reveal li {
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        .reveal h2, .reveal h3 {
+            text-transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1 -->
+            <section>
+                <h2>Digital Scholarship with Static Site Publishing</h2>
+                <p><strong>Anna Neatrour</strong></p>
+                <p><a href="https://aneatrour.github.io/" target="_blank">https://aneatrour.github.io/</a></p>
+            </section>
+
+            <!-- Slide 2 -->
+            <section>
+                <h3>Getting Started</h3>
+                <ul>
+                    <li>Sign up for a GitHub account: <a href="https://github.com/" target="_blank">https://github.com/</a></li>
+                    <li>Follow along with these slides on your laptop:</li>
+                </ul>
+                <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 20px;">
+                    <p><strong>Opening Discussion:</strong></p>
+                    <p>What’s your experience with web publishing? What have you used in the past to publish scholarship or other content on the web?</p>
+                </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section>
+                <h3>What we are covering today</h3>
+                <p style="text-align: left;">
+                    This workshop will explore the potential of static site frameworks for publishing scholarly projects. Representing a minimal computing approach to presenting information on the internet, static sites offer an option for public scholars and digital humanists that is flexible, customizable, and suited to digital preservation. We will survey a selection of scholarly projects using a variety of static site frameworks and get some hands-on experience building a digital exhibit using Collection Builder.
+                </p>
+            </section>
+
+            <!-- Slide 4 -->
+            <section>
+                <h3>Minimal Computing</h3>
+                <blockquote>
+                    “We use “minimal computing” to refer to computing done under some set of significant constraints of hardware, software, education, network capacity, power, or other factors.”
+                </blockquote>
+                <p style="font-size: 0.75em;">- What is Minimal Computing?, from: <a href="https://go-dh.github.io/mincomp/about/" target="_blank">https://go-dh.github.io/mincomp/about/</a></p>
+            </section>
+
+            <!-- Slide 5 -->
+            <section>
+                <h3>Minimal Computing</h3>
+                <blockquote>
+                    “Minimal computing is perhaps best understood as a heuristic comprising four questions to determine what is, in fact, necessary and sufficient when developing a digital humanities project under constraint: 1) “what do we need?” 2) “what do we have” 3) “what must we prioritize?” and 4) “what are we willing to give up?” ”
+                </blockquote>
+                <p style="font-size: 0.75em;">Introduction: The Questions of Minimal Computing, by Alex Gil and Roopika Risam, <a href="https://dhq.digitalhumanities.org/vol/16/2/000646/000646.html" target="_blank">https://dhq.digitalhumanities.org/vol/16/2/000646/000646.html</a></p>
+            </section>
+
+            <!-- Slide 6 -->
+            <section>
+                <h3>Digital Scholarship Constraints</h3>
+                <ul>
+                    <li>I might be using a proprietary tool provided by a vendor which requires a subscription</li>
+                    <li>I could be using open source software installed on a web server, someone needs to keep current with software updates, security issues, and future releases</li>
+                    <li>If my project contains dynamic elements that can’t easily be captured by web archiving software</li>
+                    <li>If my project is hosted on a server that I don’t control</li>
+                    <li>My research assistant might do most of the technical work on my project</li>
+                </ul>
+            </section>
+
+            <!-- Slide 7 -->
+            <section>
+                <h3>Static Sites</h3>
+                <p style="text-align: left;">
+                    Many existing websites (<a href="https://exhibits.lib.utah.edu/" target="_blank">https://exhibits.lib.utah.edu/</a>) or (<a href="https://digitalmatters.utah.edu/" target="_blank">https://digitalmatters.utah.edu/</a>) are developed with Content Management Systems, that allow you to create web pages without necessarily knowing underlying technologies of web publishing like HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets).
+                </p>
+                <p style="text-align: left;">
+                    Static sites generate web pages locally, then publish to the web. Dynamic page elements that are processed on a server are not present.
+                </p>
+            </section>
+
+            <!-- Slide 8 -->
+            <section>
+                <h3>HTML and CSS</h3>
+                <div style="font-family: monospace; background: #222; color: #fff; text-align: left; padding: 15px; border-radius: 5px; font-size: 0.7em;">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;body&gt;<br>
+                    &lt;h3 style="color:Tomato;"&gt;Hello World&lt;/h3&gt;<br>
+                    &lt;p style="color:DodgerBlue;"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&lt;/p&gt;<br>
+                    &lt;p style="color:MediumSeaGreen;"&gt;Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                <div style="margin-top: 15px; background: white; padding: 10px; border: 1px solid #ccc; text-align: left;">
+                    <h4 style="color:Tomato; margin:0;">Hello World</h4>
+                    <p style="color:DodgerBlue; font-size: 0.6em; margin: 5px 0;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <p style="color:MediumSeaGreen; font-size: 0.6em; margin: 5px 0;">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <p style="font-size: 0.6em; text-align: left;">From: <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_color_text" target="_blank">https://www.w3schools.com/css/tryit.asp?filename=trycss_color_text</a></p>
+            </section>
+
+            <!-- Slide 9 -->
+            <section>
+                <h3>Static Sites</h3>
+                <ul>
+                    <li>Require some technical skills</li>
+                    <li>Built with a variety of programming languages (eg python, ruby, go, rust)</li>
+                    <li>Often use a simple markup language (Markdown) for content creation</li>
+                </ul>
+            </section>
+
+            <!-- Slide 10 -->
+            <section>
+                <h3>Static vs Dynamic</h3>
+                <div style="display: flex; justify-content: space-between; font-size: 0.75em; text-align: left;">
+                    <div style="width: 48%;">
+                        <h4>Static</h4>
+                        <ul>
+                            <li>Every user of the web site receives the same content</li>
+                            <li>No database = fewer security vulnerabilities</li>
+                            <li>Requires some technical skill, ability to edit html and/or markdown files</li>
+                        </ul>
+                    </div>
+                    <div style="width: 48%;">
+                        <h4>Dynamic</h4>
+                        <ul>
+                            <li>Web content can be personalized, generated “on the fly”</li>
+                            <li>Interface for updating content often looks like standard word processing software</li>
+                            <li>Databases support more complex information modeling for large-scale projects</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="font-size: 0.65em; margin-top: 20px; text-align: left;">
+                    More reading: <a href="https://researchguides.uic.edu/digital-uic/static-dynamic" target="_blank">https://researchguides.uic.edu/digital-uic/static-dynamic</a>
+                </p>
+            </section>
+
+            <!-- Slide 11: Diagram Image Slide -->
+            <section>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAMACAYAAACW0d1E..." alt="Minimal Computing and Static Sites Venn Diagram" style="max-width: 90%; max-height: 80vh;">
+            </section>
+
+            <!-- Slide 12 -->
+            <section>
+                <h3>Digital Obsolescence</h3>
+                <blockquote>
+                    “Between 1996 and 2023, the National Endowment for the Humanities’ Education Development and Demonstration (NEH-EDD) program provided financial support for 59 projects producing free-use digital humanities websites. A recent survey of this program’s funded materials found that while 40 remained online in September 2020, 19 had become unavailable”
+                </blockquote>
+                <p style="font-size: 0.7em;">The Best Laid Plans: Case Studies of the Loss of Four Early (1996-2003) Digital Humanities Websites<br>
+                Dr. Drew E. VandeCreek, DHQ <a href="https://doi.org/10.63744/u7nf2ghe2gzc" target="_blank">https://doi.org/10.63744/u7nf2ghe2gzc</a></p>
+            </section>
+
+            <!-- Slide 13 -->
+            <section>
+                <h3>The Endings Project</h3>
+                <p style="font-size: 0.8em; text-align: left;"><a href="https://endings.uvic.ca/principles.html" target="_blank">Endings Principles for Digital Longevity, https://endings.uvic.ca/principles.html</a></p>
+                <p style="font-size: 0.75em; text-align: left;">Products are the project outputs intended for end-users, typically in the form of websites or print documents. The following principles apply to products intended for the web:</p>
+                <ul style="font-size: 0.65em;">
+                    <li>4.1 No dependence on server-side software: build a static website with no databases, no PHP, no Python.</li>
+                    <li>4.2 No boutique or fashionable technologies: use only standards with support across all platforms, whose long-term viability is assured. Our choices are HTML5, JavaScript, and CSS.</li>
+                    <li>4.3 No dependence on external libraries or services: no JQuery, no AngularJS, no Bootstrap, no Google Search.</li>
+                    <li>4.4 No query strings: every entity in the site has a unique page with a simple URL that will function on any domain or IP address.</li>
+                    <li>4.5 Inclusion of data: every site should include a documented copy of the source data, so that users of the site can repurpose the work easily.</li>
+                    <li>4.6 Massive redundancy: every page contains all the components it needs, so that it will function without the rest of the site if necessary, even though doing so means duplicating information across the site.</li>
+                    <li>4.7 Graceful failure: every page should still function effectively even in the absence of JavaScript or CSS support.</li>
+                </ul>
+            </section>
+
+            <!-- Slide 14: Markdown Code Examples -->
+            <section>
+                <h3>Markdown to HTML</h3>
+                <div style="font-family: monospace; background: #f8f9fa; border: 1px solid #ccc; text-align: left; padding: 10px; font-size: 0.6em; line-height: 1.2;">
+                    ---<br>
+                    layout: archive<br>
+                    title: "CV"<br>
+                    permalink: /cv/<br>
+                    author_profile: true<br>
+                    redirect_from:<br>
+                    &nbsp;&nbsp;- /resume<br>
+                    ---<br><br>
+                    {% include base_path %}<br><br>
+                    [My current CV](https://github.com/aneatrour/aneatrour.github.io/blob/master/files/NEATROUR_CV_2026_06.pdf)<br><br>
+                    **EDUCATION:**<br><br>
+                    M.L.I.S. Graduate School of Library and Information Science, University of Illinois, Urbana-Champaign, IL<br><br>
+                    B.A. in English, Kalamazoo College, Kalamazoo, MI<br><br>
+                    **LIBRARY EXPERIENCE:**<br><br>
+                    September 2023–present<br>
+                    Head, Digital Library Services<br>
+                    University of Utah, J. Willard Marriott Library, Salt Lake City, UT
+                </div>
+            </section>
+
+            <!-- Slide 15 -->
+            <section>
+                <h3>Some benefits of a static site approach</h3>
+                <ul>
+                    <li>Static sites do not have many of the security issues that Content Management Systems like WordPress have. More robust when dealing with security issues like bot attacks, malicious crawling.</li>
+                    <li>If your project is relatively self-contained, a static site may give you “just enough” functionality.</li>
+                    <li>Static sites are portable, also conducive to web archiving for more long-term preservation.</li>
+                    <li>Can host anywhere. Many people use GitHub for this.</li>
+                </ul>
+            </section>
+
+            <!-- Slide 16 -->
+            <section>
+                <h3>Group Exploration</h3>
+                <p style="text-align: left;"><strong>Quire (from the Getty)</strong></p>
+                <ul style="font-size: 0.8em;">
+                    <li>Materia: Journal of Technical Art History, Issue 3 <a href="https://issue-3.materiajournal.com/" target="_blank">https://issue-3.materiajournal.com/</a></li>
+                    <li>Corpus Vasorum Antiquorum, Princeton Art Museum <a href="https://cva.artmuseum.princeton.edu/" target="_blank">https://cva.artmuseum.princeton.edu/</a></li>
+                </ul>
+                <div style="margin-top: 20px; text-align: left; background: #f0f4f8; padding: 10px; border-radius: 5px; font-size: 0.8em;">
+                    <p>What are features you like about each site? Are there aspects of the web sites that aren’t working for you?</p>
+                    <p>How effective do you find them in conveying information?</p>
+                </div>
+            </section>
+
+            <!-- Slide 17 -->
+            <section>
+                <h3>Group Exploration</h3>
+                <p style="text-align: left;"><strong>Academic Portfolio and Project Sites using Jekyll</strong></p>
+                <ul style="font-size: 0.8em;">
+                    <li>Ryan Cordell <a href="https://ryancordell.org/" target="_blank">https://ryancordell.org/</a></li>
+                    <li>Saving Ukrainian Cultural Heritage Online (SUCHO) <a href="https://www.sucho.org/" target="_blank">https://www.sucho.org/</a></li>
+                </ul>
+                <div style="margin-top: 20px; text-align: left; background: #f0f4f8; padding: 10px; border-radius: 5px; font-size: 0.8em;">
+                    <p>What are features you like about each site? Are there aspects of the web sites that aren’t working for you?</p>
+                    <p>How effective do you find them in conveying information?</p>
+                </div>
+            </section>
+
+            <!-- Slide 18 -->
+            <section>
+                <h3>Group Exploration</h3>
+                <p style="text-align: left;"><strong>Collection Builder</strong></p>
+                <ul style="font-size: 0.8em;">
+                    <li>Sedimentation by Hannah Green <a href="https://cdil.lib.uidaho.edu/sedimentation/" target="_blank">https://cdil.lib.uidaho.edu/sedimentation/</a></li>
+                    <li>F.B. Eyes Digital Archive <a href="https://fbeyes.wustl.edu/" target="_blank">https://fbeyes.wustl.edu/</a></li>
+                </ul>
+                <div style="margin-top: 20px; text-align: left; background: #f0f4f8; padding: 10px; border-radius: 5px; font-size: 0.8em;">
+                    <p>What are features you like about each site? Are there aspects of the web sites that aren’t working for you?</p>
+                    <p>How effective do you find them in conveying information?</p>
+                </div>
+            </section>
+
+            <!-- Slide 19 -->
+            <section>
+                <h3>GitHub! What is it good for???</h3>
+                <ul>
+                    <li>Used as a shared repository for software development. Supports team-based or solo work.</li>
+                    <li>Maintains a record of changes for a project.</li>
+                    <li>Good for documentation, tracking issues.</li>
+                    <li>Has features that allow you to deploy static site pages for web publishing.</li>
+                    <li>Free</li>
+                    <li>Acquired by Microsoft in 2018</li>
+                </ul>
+            </section>
+
+            <!-- Slide 20 -->
+            <section>
+                <h3>Collection Builder</h3>
+                <ul>
+                    <li>Developed by the University of Idaho Library with federal grant funding</li>
+                    <li>Metadata-focused static site solution</li>
+                    <li>Used for a variety of Digital Humanities / Public History projects</li>
+                    <li>Can walk through some basics in getting started on GitHub without needing to download software locally on your computer</li>
+                    <li>Has add-ons that support long form essays and oral histories as data projects</li>
+                </ul>
+            </section>
+
+            <!-- Slide 21 -->
+            <section>
+                <h3>Collection Builder GitHub Walkthrough</h3>
+                <p style="text-align: left;">Tutorial is available here:<br>
+                <a href="https://collectionbuilder.github.io/cb-docs/docs/walkthroughs/gh-walkthrough/" target="_blank">https://collectionbuilder.github.io/cb-docs/docs/walkthroughs/gh-walkthrough/</a></p>
+                <p style="text-align: left;">We’ll go through the steps together of setting up a Collection Builder repository on GitHub and making edits to the sample digital exhibit.</p>
+            </section>
+
+            <!-- Slide 22 -->
+            <section>
+                <h3>GitHub Pages Tips</h3>
+                <p style="text-align: left;"><strong>Previewing your sample site:</strong></p>
+                <p style="text-align: left;">Your GitHub Repository might have a URL like:<br>
+                <code>https://github.com/aneatrour/collection_builder_demo</code></p>
+                <p style="text-align: left;">To look at your sample digital exhibit as a web site, replace the first part of the URL like this:<br>
+                <code>https://aneatrour.github.io/collection_builder_demo/</code></p>
+            </section>
+
+            <!-- Slide 23 -->
+            <section>
+                <h3>Recap and more resources</h3>
+                <ul>
+                    <li>We’ve looked at how static sites are used for scholarly publishing in a variety of contexts and explored the concept of minimal computing</li>
+                    <li>We’ve gotten practice using Collection Builder to create a digital exhibit</li>
+                    <li>We’ve established GitHub accounts and edited yaml and markdown files</li>
+                </ul>
+                <div style="margin-top: 20px; text-align: left;">
+                    <p>Check out my LibGuide on this topic!<br>
+                    <a href="https://campusguides.lib.utah.edu/static-sites" target="_blank">https://campusguides.lib.utah.edu/static-sites</a></p>
+                    <p>Feel free to reach out if you have further questions, <a href="mailto:anna.neatrour@utah.edu">anna.neatrour@utah.edu</a></p>
+                    <h4>Thank you!</h4>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true
+        });
+    </script>
+</body>
+</html>
